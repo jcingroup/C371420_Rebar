@@ -398,6 +398,10 @@
     <Content Include="Content\images\Products\p5\pic5.jpg" />
     <Content Include="Content\images\Products\p5\pic5_b.jpg" />
     <Content Include="Content\images\Service\pic1.jpg" />
+    <Content Include="Content\images\Service\pic10.jpg" />
+    <Content Include="Content\images\Service\pic10_b.jpg" />
+    <Content Include="Content\images\Service\pic11.jpg" />
+    <Content Include="Content\images\Service\pic11_b.jpg" />
     <Content Include="Content\images\Service\pic1_b.jpg" />
     <Content Include="Content\images\Service\pic2.jpg" />
     <Content Include="Content\images\Service\pic2_b.jpg" />
@@ -413,6 +417,8 @@
     <Content Include="Content\images\Service\pic7_b.jpg" />
     <Content Include="Content\images\Service\pic8.jpg" />
     <Content Include="Content\images\Service\pic8_b.jpg" />
+    <Content Include="Content\images\Service\pic9.jpg" />
+    <Content Include="Content\images\Service\pic9_b.jpg" />
     <Content Include="Content\images\slash.png" />
     <Content Include="Content\images\Works\pic1.jpg" />
     <Content Include="Content\images\Works\pic1_b.jpg" />
