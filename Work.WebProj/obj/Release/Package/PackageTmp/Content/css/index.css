@@ -1,0 +1,127 @@
+@import "base/basic.css";
+@import "base/layout.css";
+@charset "utf-8";
+
+
+/*      layout
+-----------------------------------------------------------------------*/
+
+h2 {margin-bottom:20px;}
+h2 span {color:#919696;}
+
+/*-- header --*/
+#header {margin-bottom:44px;}
+#banner {height:403px;}
+
+
+/*      index
+-----------------------------------------------------------------------*/
+
+/* intro */
+.intro {
+    margin-left:-29px;
+    margin-bottom:38px;
+    overflow: hidden;
+}
+.intro figure {
+    width:307px;
+    height:229px;
+    float:left;
+    position: relative;
+    margin-left:29px;
+    border-bottom: 2px solid #bcbcbc;
+    box-shadow: 0 2px 0 #bcbcbc;
+}
+.intro figcaption {
+    width: 100%;
+    height: 227px;
+    position: absolute;
+    left:0;
+    top:0;
+    text-align: right;
+}
+.intro figcaption .mask {
+    display: block;
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+}
+.intro figcaption .mask span {
+    display: block;
+    width:100%;
+    height:0;
+    position: absolute;
+    left:0;
+    bottom:0;
+    text-align: left;
+    text-indent: -9999px;
+    background: url('../images/Index/intro.png') no-repeat center center;
+    opacity: 0;
+    transition: height 0.65s, opacity 0.65s;
+}
+.intro figcaption .mask:hover span {
+    height:100%;
+    opacity: 1;
+}
+.intro figcaption h2 {
+    width:100%;
+    height:70px;
+    position: absolute;
+    left:0;
+    bottom:0;
+    margin-bottom:0;
+    padding:16px 18px 12px 18px;
+    font-weight: normal;
+    font-size: 1em;
+    color:#5f8e69;
+    background: rgba(255,255,255,1);
+    transition: height 0.65s, background 0.65s;
+}
+.intro figcaption h2 em {
+    font-weight: bold;
+    text-shadow:-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    transition: color 0.65s;
+}
+.intro figcaption h2 span {
+    display: block;
+    padding:12px 18px 0 18px;
+    font-size: 0.714em;
+    font-style: normal;
+    color: #000;
+    text-shadow:-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    background: url('../images/arrow2.gif') no-repeat right 13px;
+    transition: padding 0.65s, background 0.65s;
+}
+.intro figcaption:hover h2 {
+    height:100%;
+    background: rgba(255,255,255,0.7);
+}
+.intro figcaption:hover h2 em {
+    color:#000;
+}
+.intro figcaption:hover h2 span {
+    padding:12px 0 0 18px;
+    background: none;
+}
+
+/* clients */
+.clients .btn {
+    float:right;
+    margin-top:-40px;
+}
+
+.clients .pic-list {
+    clear: both;
+    height:80px;
+    margin-left:-30px;
+}
+.clients .pic-list li {
+    width: 138px;
+    height: 80px;
+    float:left;
+    margin-left:30px;
+    background: #fff;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+}

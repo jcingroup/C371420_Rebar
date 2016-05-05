@@ -1,0 +1,54 @@
+﻿@{
+  ViewBag.BodyClass = "Products p2";
+  ViewBag.Category = "產品介紹";
+  ViewBag.Title = "加工流程";
+  Layout = "~/Views/Shared/Layout.cshtml";
+}
+@section breadcrumb {
+    <ul class="breadcrumb">
+        <li class="s"><a href="~/Index">HOME</a></li>
+        <li><a href="~/Products">@ViewBag.Category</a></li>
+        <li>@ViewBag.Title</li>
+    </ul>
+}
+@section css {
+    <link rel="stylesheet" href="~/Scripts/fancyBox/source/jquery.fancybox.css"><!--fancybox燈箱-->
+}
+@section Scripts {
+  <!--fancybox燈箱-->
+  <script type="text/javascript" src="~/Scripts/fancyBox/source/jquery.fancybox.js"></script>
+  <script type="text/javascript" src="~/Scripts/fancyBox/set.js"></script>
+  <script>
+    //fancybox + 圖說
+    $(function() {
+    $(".fancybox").fancybox({
+      padding: 10,
+      beforeLoad: function() {
+        var el, id = $(this.element).data("title-id");
+        if (id) {
+          el = $("#" + id);
+          if (el.length) {
+            this.title = el.html();
+          }
+        } 
+      },
+      helpers : {
+        title: {type: "float"}
+      }
+    });
+  });
+  </script>
+}
+
+<h2>@ViewBag.Category<span>PRODUCTS</span></h2>
+
+<h3>@ViewBag.Title</h3>
+
+<p class="flowchart">
+  <img src="~/Content/images/Products/p2/pic1.gif" alt="">
+  <a href="~/Content/images/Products/p2/step2.jpg" class="step2 fancybox" data-title-id="step2"><em id="step2">鋼筋裁切</em></a>
+  <a href="~/Content/images/Products/p2/step3.jpg" class="step3 fancybox" data-title-id="step3"><em id="step3">鋼筋擴頭整園</em></a>
+  <a href="~/Content/images/Products/p2/step4.jpg" class="step4 fancybox" data-title-id="step4"><em id="step4">鋼筋削皮</em></a>
+  <a href="~/Content/images/Products/p2/step6.jpg" class="step6 fancybox" data-title-id="step6"><em id="step6">鋼筋滾牙成型</em></a>
+  <a href="~/Content/images/Products/p2/step7.jpg" class="step7 fancybox" data-title-id="step7"><em id="step7">牙規檢查</em></a>
+</p>

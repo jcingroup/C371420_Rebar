@@ -1,0 +1,25 @@
+﻿@{
+  ViewBag.BodyClass = "Service";
+  ViewBag.Title = "服務項目";
+  Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section breadcrumb {
+    <ul class="breadcrumb">
+        <li class="s"><a href="~/Index">HOME</a></li>
+        <li>@ViewBag.Title</li>
+    </ul>
+}
+
+<h2>@ViewBag.Title<span>SERVICE</span></h2>
+
+<ol class="pic-list">
+  <li>
+      <img src="~/Content/images/Service/pic1.jpg" alt="">
+      <h3>鋼筋滾牙加工</h3>
+  </li>
+  <li>
+      <img src="~/Content/images/Service/pic2.jpg" alt="">
+      <h3>工地現場組接</h3>
+  </li>
+ </ol>

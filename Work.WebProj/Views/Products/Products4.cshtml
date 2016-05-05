@@ -1,0 +1,93 @@
+﻿@{
+  ViewBag.BodyClass = "Products p4";
+  ViewBag.Category = "產品介紹";
+  ViewBag.Title = "鋼筋工地現場組接工法";
+  Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section breadcrumb {
+    <ul class="breadcrumb">
+        <li class="s"><a href="~/Index">HOME</a></li>
+        <li><a href="~/Products">@ViewBag.Category</a></li>
+        <li>@ViewBag.Title</li>
+    </ul>
+}
+@section css {
+    <link rel="stylesheet" href="~/Scripts/fancyBox/source/jquery.fancybox.css"><!--fancybox燈箱-->
+}
+@section Scripts {
+  <!--fancybox燈箱-->
+  <script type="text/javascript" src="~/Scripts/fancyBox/source/jquery.fancybox.js"></script>
+  <script type="text/javascript" src="~/Scripts/fancyBox/set.js"></script>
+  <script>
+    //fancybox + 圖說
+    $(function() {
+    $(".fancybox").fancybox({
+      padding: 10,
+      beforeLoad: function() {
+        var el, id = $(this.element).data("title-id");
+        if (id) {
+          el = $("#" + id);
+          if (el.length) {
+            this.title = el.html();
+          }
+        } 
+      },
+      helpers : {
+        title: {type: "float"}
+      }
+    });
+  });
+  </script>
+}
+
+<h2>@ViewBag.Category<span>PRODUCTS</span></h2>
+
+<h3>@ViewBag.Title</h3>
+
+<ol class="pic-list">
+  <li>
+      <a href="~/Content/images/Products/p4/pic1_b.jpg" class="fancybox" data-title-id="pic1" rel="gallery"><img src="~/Content/images/Products/p4/pic1.jpg" alt=""></a>
+      <em id="pic1">T頭錨錠</em>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p4/pic2_b.jpg" class="fancybox" data-title-id="pic2" rel="gallery"><img src="~/Content/images/Products/p4/pic2.jpg" alt=""></a>
+      <em id="pic2">T頭錨錠</em>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p4/pic3_b.jpg" class="fancybox" data-title-id="pic3" rel="gallery"><img src="~/Content/images/Products/p4/pic3.jpg" alt=""></a>
+      <em id="pic3">柱筋</em>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p4/pic4_b.jpg" class="fancybox" data-title-id="pic4" rel="gallery"><img src="~/Content/images/Products/p4/pic4.jpg" alt=""></a>
+      <em id="pic4">柱筋</em>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p4/pic5_b.jpg" class="fancybox" data-title-id="pic5" rel="gallery"><img src="~/Content/images/Products/p4/pic5.jpg" alt=""></a>
+      <em id="pic5">萬向延伸型</em>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p4/pic6_b.jpg" class="fancybox" data-title-id="pic6" rel="gallery"><img src="~/Content/images/Products/p4/pic6.jpg" alt=""></a>
+      <em id="pic6">電銲型續接器</em>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p4/pic7_b.jpg" class="fancybox" data-title-id="pic7" rel="gallery"><img src="~/Content/images/Products/p4/pic7.jpg" alt=""></a>
+      <em id="pic7">樑筋組接</em>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p4/pic8_b.jpg" class="fancybox" data-title-id="pic8" rel="gallery"><img src="~/Content/images/Products/p4/pic8.jpg" alt=""></a>
+      <em id="pic8">樑筋組接</em>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p4/pic9_b.jpg" class="fancybox" data-title-id="pic9" rel="gallery"><img src="~/Content/images/Products/p4/pic9.jpg" alt=""></a>
+      <em id="pic9">樑筋組接</em>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p4/pic10_b.jpg" class="fancybox" data-title-id="pic10" rel="gallery"><img src="~/Content/images/Products/p4/pic10.jpg" alt=""></a>
+      <em id="pic10">標準型續接器</em>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p4/pic11_b.jpg" class="fancybox" data-title-id="pic11" rel="gallery"><img src="~/Content/images/Products/p4/pic11.jpg" alt=""></a>
+      <em id="pic11">鋼筋籠</em>
+  </li>
+</ol>

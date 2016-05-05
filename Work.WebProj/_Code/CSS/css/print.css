@@ -1,0 +1,222 @@
+﻿@charset "utf-8";
+
+/*      css reset v1.0 | 20080212
+-----------------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp, hr,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	line-height:140%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+
+/* remember to define focus styles! */
+:focus {outline: 0;}
+
+/* remember to highlight inserts somehow! */
+ins {text-decoration: none;}
+del {text-decoration: line-through;}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {border-collapse: collapse;border-spacing: 0;}
+table, th, td {vertical-align: middle;}
+
+
+/*      Generic Classes
+-----------------------------------------------------------------------*/
+.full {width:100%} /* 寬度滿格 */ 
+.valign-m { vertical-align:middle; }  /* 上下罝中 */ 
+.float-l { float:left; }  /* 向左浮動 */ 
+.float-r { float:right; }  /* 向右浮動 */ 
+.tCenter { text-align:center; } /* 文字罝中 */ 
+.tLeft { text-align:left; } /* 文字靠左 */ 
+.tRight { text-align:right; } /* 文字靠右 */ 
+.clearfix {clear:both}  /* 清除浮動 */ 
+
+.btn {
+ border:none;
+  background:#ADD8E6;
+  color:#000000;
+  font-size:12px;
+  cursor:pointer; cursor:hand;
+  }
+
+.Button{
+  border:1px groove navy;
+  /*background-image:url('../_images/bg-line2.gif');
+  background:#C9082F;
+  color:white;*/
+  background:#BAE4E5;
+  
+  color:black;
+  font-size:10pt;
+  
+  cursor:pointer; cursor:hand;
+  }
+
+.ErrMsg {
+  color:red;
+  font-size:8pt;
+  }
+.Note {
+  color:green;
+  }
+
+
+/*      basic elements
+-----------------------------------------------------------------------*/
+html, body {height: 100%; text-align: center;}
+body { font: .85em/130% Georgia, '微軟正黑體', 'Microsoft JhengHei', sans-serif; }
+
+a, a:link, a:focus, a:active {
+	color:#657874;
+	font:11px/12px Tahoma, Verdana, Lucida, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	vertical-align:text-bottom;
+	*zoom:1;
+	blur:expression(this.onFocus=this.blur());/*清除虛線框*/
+	}
+a:hover {color:#000000;}
+a:focus { -moz-outline-style: none; }/*ff清除虛線框*/
+
+
+/*      for web
+-----------------------------------------------------------------------*/
+@media all
+{
+
+/*** Layout ***/
+
+#container {
+  width:100%; min-width:930px;
+  /*min-width:291mm;*/
+  box-sizing: border-box;
+  }
+
+#header,
+#main {
+  width:900px;
+  margin:0 auto;
+  }
+
+#header {
+  position:relative;
+  padding-top:20px;
+  }
+
+#main {
+  /*width:285mm; height:180mm;*/
+  padding:20px;
+  text-align:left;
+  }
+
+
+/*** Header ***/
+
+h1 { 
+  font-size:1.6em;
+  font-weight:bold;
+  }
+  
+h2 {
+  margin-bottom:10px;
+  padding-bottom:10px;
+  border-bottom:1px solid;
+  }
+  
+h3 {
+  font-size:1.4em;
+  }
+
+.print {
+  display:block;
+  position:absolute;
+  top:20px; right:0;
+  padding:6px;
+  color:#fff;
+  font-weight:bold;
+  font-size:1.3em;
+  background:#90CB4B;
+  border:1px solid #6A9B31;
+  cursor:pointer;
+  width:120px;
+  }
+
+/*** Main ***/
+
+p {
+  margin-bottom:10px;
+  padding-bottom:10px;
+  font-size:1.2em;
+  border-bottom:1px dotted #ccc;
+  }
+
+p label, p input {
+  display:inline-block;
+  margin:0 5px;
+  box-sizing: border-box;
+  }
+
+p span+label {margin-left:20px;}
+
+p span {
+  font-weight:bold;
+  color:#369;
+  }
+  
+p em {
+  font-style:normal;
+  font-size:0.9em;
+  color:#666;
+  margin:0 20px;
+  }
+
+div.chart {
+  width:100%;
+  margin:30px 0;
+  /*overflow:auto;*/
+  }
+
+h4 {
+  margin:20px 0;
+  text-align:center;
+  font-size:1.3em;
+  font-weight:normal;
+  display:none;
+  }
+
+}
+
+@media print {
+
+.print {display:none;}
+
+h4 {
+  display:block;
+  page-break-after: always;
+  }
+
+div.chart {
+  margin:30px 0 0 0;
+  text-align:center;
+  overflow:hidden;
+}
+
+.chart img {max-width:100%;}
+  
+}

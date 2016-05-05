@@ -1,0 +1,201 @@
+@charset "utf-8";
+@import url('http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic');
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;  /* 讓bold沿用英文字體的500 */
+    src: local('Roboto Medium'), local('Roboto-Medium'), url(http://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(http://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+/*      CSS reset::html5 (20141204)
+-----------------------------------------------------------------------*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block;}
+nav ul,ul,ol{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+
+a,a:link,a:active,a:visited {
+    text-decoration: none;
+    vertical-align:baseline; vertical-align:middle\9;
+    outline: none; /* ff 消除虛線框*/
+    blur:expression(this.onFocus=this.blur()); /* ie消除虛線框 */
+}
+a:focus {
+    outline: none;
+    -moz-outline-style: none; /* ff 消除虛線框 */
+}
+
+
+/*      basic elements
+-----------------------------------------------------------------------*/
+* {box-sizing: border-box;}
+*::-moz-selection {color:#fff; background: #62896A;}
+*::selection {color:#fff; background: #62896A;}
+body {
+    background: #e4e4e4 url('../../images/bg.gif') repeat-x 0 0;
+    color: #3b3b3b;
+    font-size: 15px;
+    font-family: Roboto, 'Helvetica Neue', Helvetica, '\5FAE\8EDF\6B63\9ED1\9AD4', sans-serif;
+}
+html, body { height:100%; text-align:center; }
+a {
+    color:#5f8e69;
+    transition: color .35s ease;
+}
+a:hover,
+a.active { color: #000; }
+h2 {
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-size: 1.429em;
+    color: #676b6b;
+}
+h2 span {
+    margin-left: 10px;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 0.7em;
+    color: #b1b8b8;
+}
+h3 {
+    margin-bottom:18px;
+    font-size: 1.143em;
+    color:#676b6b;
+}
+h3:after {
+    content:" ";
+    display: inline-block;
+    width: 12px;
+    height:23px;
+    margin-left:-2px;
+    margin-bottom:-5px;
+    background: url('../../images/slash.png') no-repeat;
+}
+h4 {
+    
+}
+h5 {
+    
+}
+em { font-style: normal }
+p {
+    margin-bottom:8px;
+    line-height: 145%;
+}
+strong {
+    color:#DB763F;
+    font-weight:bold;
+    font-size: 1.143em;
+}
+cite {
+    
+}
+hr {
+    width: 100%;
+    height:27px;
+    background: url('../../images/hr.png') no-repeat center top;
+    border:none;
+ }
+
+table { width:100%; }
+tr:nth-child(odd) {
+    background: #F2F2F2;
+}
+th, td {
+    border:1px solid #fff;
+    vertical-align: middle;
+    padding:10px;
+}
+th {
+    color:#fff;
+    background: #9D9D9D;
+}
+td {}
+
+input, select, option, textarea {
+    padding:3px 5px;
+    border:none;
+}
+input:hover, select:hover, option:hover, textarea:hover,
+input:focus, select:focus, option:focus, textarea:focus {
+    outline: none;
+}
+textarea {
+}
+button, button:hover, button:focus {
+    border: none;
+    outline: none;
+}
+
+
+
+/*      Generic Classes
+-----------------------------------------------------------------------*/
+.full { width:100% } /* 寬度100% */
+.half { width:46.9% } /* 寬度50% */
+.float-l,.float-r { margin:0 0 20px 0; position:relative;}
+.float-l { float:left; margin-right: 15px;}
+.float-r { float:right; margin-left: 15px;}
+.align-c { text-align:center } /* 水平罝中,文字置中 */
+.align-l { text-align:left; } /* 向左對齊 */
+.align-r { text-align:right; } /* 向右對齊 */
+.valign-t { vertical-align:top; } /* 垂直置頂 */
+.valign-m { vertical-align:middle; } /* 垂直置中 */
+.valign-b { vertical-align:bottom; } /* 垂直置底 */
+
+.clear { clear:both } /* 清除浮動 */
+.clearfix:after { clear: both; content: ' '; display: block; font-size: 0; line-height: 0; visibility: hidden; width: 0; height: 0; }
+.clearfix { display: inline-block; }
+.msg { color:#D84F2E } /* 提示信息 */
+.hide { display:none; }/* 隱藏 */
+
+/* 按鈕 */
+.btn {
+    display:inline-block;
+    padding:7px 24px 7px 10px;
+    cursor:pointer;
+    letter-spacing: 0.043em;
+    font-size: 0.714em;
+    color:#fff;
+    background: #3b3b3b url('../../images/arrow.png') no-repeat right 9px center;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    transition: color 0.25s, background 0.25s;
+}
+.btn:hover,
+.btn:active {
+    color:#fff;
+    background-color: #5F8E69;
+}
+
+/* 多欄列表 */
+.grid {
+    overflow: hidden;
+}
+.grid li {
+    width:226px;
+    float:left;
+    margin:5px;
+    padding:5px 10px;
+    background: #F4F4F4;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+    transition:background 0.35s;
+}
+.grid li:hover {background: #fff;}
+
+/* 表格列表 */
+
+
+/* 表格列表 */
+
+/* 表格滑鼠換色 */

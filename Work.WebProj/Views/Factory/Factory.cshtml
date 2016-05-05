@@ -1,0 +1,80 @@
+﻿@{
+  ViewBag.BodyClass = "Factory";
+  ViewBag.Title = "廠房介紹";
+  Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section breadcrumb {
+    <ul class="breadcrumb">
+        <li class="s"><a href="~/Index">HOME</a></li>
+        <li>@ViewBag.Title</li>
+    </ul>
+}
+@section css {
+    <link rel="stylesheet" href="~/Scripts/fancyBox/source/jquery.fancybox.css"><!--fancybox燈箱-->
+}
+@section Scripts {
+  <!--fancybox燈箱-->
+  <script type="text/javascript" src="~/Scripts/fancyBox/source/jquery.fancybox.js"></script>
+  <script type="text/javascript" src="~/Scripts/fancyBox/set.js"></script>
+  <script>
+    //fancybox + 圖說
+    $(function() {
+		$(".fancybox").fancybox({
+			padding: 10,
+			beforeLoad: function() {
+				var el, id = $(this.element).data("title-id");
+				if (id) {
+					el = $("#" + id);
+					if (el.length) {
+						this.title = el.html();
+					}
+				} 
+			},
+			helpers : {
+				title: {type: "float"}
+			}
+		});
+	});
+  </script>
+}
+
+<h2>@ViewBag.Title<span>FACTORY</span></h2>
+
+<h3>工廠外觀</h3>
+<ol class="pic-list">
+	<li>
+	    <a href="~/Content/images/Factory/pic1_b.jpg" class="fancybox" data-title-id="pic1" rel="gallery"><img src="~/Content/images/Factory/pic1.jpg" alt=""></a>
+	    <em id="pic1">廠房外觀</em>
+	</li>
+	<li>
+	    <a href="~/Content/images/Factory/pic2_b.jpg" class="fancybox" data-title-id="pic2" rel="gallery"><img src="~/Content/images/Factory/pic2.jpg" alt=""></a>
+	    <em id="pic2">地磅外觀</em>
+	</li>
+</ol>
+
+<h3>加工區</h3>
+
+<ol class="pic-list">
+	<li>
+	    <a href="~/Content/images/Factory/pic3_b.jpg" class="fancybox" data-title-id="pic3" rel="gallery"><img src="~/Content/images/Factory/pic3.jpg" alt=""></a>
+	    <em id="pic3">進出場庫儲區</em>
+	</li>
+	<li>
+	    <a href="~/Content/images/Factory/pic4_b.jpg" class="fancybox" data-title-id="pic4" rel="gallery"><img src="~/Content/images/Factory/pic4.jpg" alt=""></a>
+	    <em id="pic4">鋼筋裁切區</em>
+	</li>
+	<li>
+	    <a href="~/Content/images/Factory/pic5_b.jpg" class="fancybox" data-title-id="pic5" rel="gallery"><img src="~/Content/images/Factory/pic5.jpg" alt=""></a>
+	    <em id="pic5">鋼筋擴頭區</em>
+	</li>
+	<li>
+	    <a href="~/Content/images/Factory/pic6_b.jpg" class="fancybox" data-title-id="pic6" rel="gallery"><img src="~/Content/images/Factory/pic6.jpg" alt=""></a>
+	    <em id="pic6">鋼筋削皮區</em>
+	</li>
+
+	<li>
+	    <a href="~/Content/images/Factory/pic7_b.jpg" class="fancybox" data-title-id="pic7" rel="gallery"><img src="~/Content/images/Factory/pic7.jpg" alt=""></a>
+	    <em id="pic7">鋼筋滾牙機</em>
+	</li>
+</ol>

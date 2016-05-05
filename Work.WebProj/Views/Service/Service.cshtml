@@ -1,0 +1,78 @@
+﻿@{
+  ViewBag.BodyClass = "Service";
+  ViewBag.Title = "服務項目";
+  Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section breadcrumb {
+    <ul class="breadcrumb">
+        <li class="s"><a href="~/Index">HOME</a></li>
+        <li>@ViewBag.Title</li>
+    </ul>
+}
+
+@section css {
+    <link rel="stylesheet" href="~/Scripts/fancyBox/source/jquery.fancybox.css"><!--fancybox燈箱-->
+}
+@section Scripts {
+  <!--fancybox燈箱-->
+  <script type="text/javascript" src="~/Scripts/fancyBox/source/jquery.fancybox.js"></script>
+  <script type="text/javascript" src="~/Scripts/fancyBox/set.js"></script>
+  <script>
+    //fancybox + 圖說
+    $(function() {
+    $(".fancybox").fancybox({
+      padding: 10,
+      beforeLoad: function() {
+        var el, id = $(this.element).data("title-id");
+        if (id) {
+          el = $("#" + id);
+          if (el.length) {
+            this.title = el.html();
+          }
+        } 
+      },
+      helpers : {
+        title: {type: "float"}
+      }
+    });
+  });
+  </script>
+}
+
+<h2>@ViewBag.Title<span>SERVICE</span></h2>
+
+<ol class="pic-list">
+  <li>
+      <a href="~/Content/images/Service/pic1_b.jpg" class="fancybox" data-title-id="pic1" rel="gallery"><img src="~/Content/images/Service/pic1.jpg" alt=""></a>
+      <h3 id="pic1">鋼筋滾牙加工</h3>
+  </li>
+  <li>
+      <a href="~/Content/images/Service/pic2_b.jpg" class="fancybox" data-title-id="pic2" rel="gallery"><img src="~/Content/images/Service/pic2.jpg" alt=""></a>
+      <h3 id="pic2">工地現場組接</h3>
+  </li>
+  <li>
+      <a href="~/Content/images/Service/pic3_b.jpg" class="fancybox" data-title-id="pic3" rel="gallery"><img src="~/Content/images/Service/pic3.jpg" alt=""></a>
+      <h3 id="pic3">植筋</h3>
+  </li>
+  <li>
+      <a href="~/Content/images/Service/pic4_b.jpg" class="fancybox" data-title-id="pic4" rel="gallery"><img src="~/Content/images/Service/pic4.jpg" alt=""></a>
+      <h3 id="pic4">結構補強工程</h3>
+  </li>
+  <li>
+      <a href="~/Content/images/Service/pic5_b.jpg" class="fancybox" data-title-id="pic5" rel="gallery"><img src="~/Content/images/Service/pic5.jpg" alt=""></a>
+      <h3 id="pic5">鑽孔切割工程</h3>
+  </li>
+  <li>
+      <a href="~/Content/images/Service/pic6_b.jpg" class="fancybox" data-title-id="pic6" rel="gallery"><img src="~/Content/images/Service/pic6.jpg" alt=""></a>
+      <h3 id="pic6">鏈鋸切割</h3>
+  </li>
+  <li>
+      <a href="~/Content/images/Service/pic7_b.jpg" class="fancybox" data-title-id="pic7" rel="gallery"><img src="~/Content/images/Service/pic7.jpg" alt=""></a>
+      <h3 id="pic7">無收縮水泥灌注</h3>
+  </li>
+  <li>
+      <a href="~/Content/images/Service/pic8_b.jpg" class="fancybox" data-title-id="pic8" rel="gallery"><img src="~/Content/images/Service/pic8.jpg" alt=""></a>
+      <h3 id="pic8">裝修改建工程（拆除，打石，清運）</h3>
+  </li>
+ </ol>

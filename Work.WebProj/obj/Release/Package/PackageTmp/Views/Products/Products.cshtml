@@ -1,0 +1,28 @@
+﻿@{
+  ViewBag.BodyClass = "Products p1";
+  ViewBag.Category = "產品介紹";
+  ViewBag.Title = "產品加工法";
+  Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section breadcrumb {
+    <ul class="breadcrumb">
+        <li class="s"><a href="~/Index">HOME</a></li>
+        <li><a href="~/Products">@ViewBag.Category</a></li>
+        <li>@ViewBag.Title</li>
+    </ul>
+}
+
+<h2>@ViewBag.Category<span>PRODUCTS</span></h2>
+
+<figure class="float-l">
+    <img src="~/Content/images/Products/p1/pic1.jpg" alt="">
+    <img src="~/Content/images/Products/p1/pic2.jpg" alt="">
+    <figcaption>921地震結構損壞照片中(台中-大里)同一受損柱正面與側面照片中說明、柱箍筋未施做或被切除,無法產生圍束功能，該結構柱鋼筋接合方式使用續接器接合,當混凝土未完全破壞前,鋼筋抗拉強度仍然存在，增強該結構耐震能力。</figcaption>
+</figure>
+
+<h3>@ViewBag.Title</h3>
+
+<p>本公司採用<strong>擴頭整圓滾牙螺紋鋼筋續接工法</strong>，強化鋼筋螺紋端部組織，擴大部份面積與改善鋼筋斷面圓度，螺紋採用滾牙加工方式可保留鋼筋母材之原斷面積及其延展性，<strong>續接後品質可達母材塑性斷裂強度</strong>。</p>
+<p>擴頭整圓滾牙螺紋鋼筋續接工法，係使用專用擴頭整圓設備在鋼筋螺紋加工處擠壓，擴大部份面積與加強鋼筋斷面圓度。鋼筋斷面圓度越圓對螺紋滾牙加工品質提升越佳，滾牙加工亦可擴大螺紋外徑增加螺牙強度，<strong>達到SA級標準</strong>。</p>
+<p>擴頭量由專用擴頭整圓設備模具管制，操作簡易。由工地取樣統計，<strong>試體延展性塑斷接近100%</strong>，施工可靠度高。在一般鋼筋混凝土結構體內,鋼筋如使用續接器接合,當結構體受力時,其力量可介由續接器迅速分散傳遞至結構體內各部位置,對於提升結構體耐震能力有相當助益</p>

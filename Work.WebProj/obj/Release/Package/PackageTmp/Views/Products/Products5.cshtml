@@ -1,0 +1,95 @@
+﻿@{
+  ViewBag.BodyClass = "Products p5";
+  ViewBag.Category = "產品介紹";
+  ViewBag.Title = "SA級試驗報告";
+  Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section breadcrumb {
+    <ul class="breadcrumb">
+        <li class="s"><a href="~/Index">HOME</a></li>
+        <li><a href="~/Products">@ViewBag.Category</a></li>
+        <li>@ViewBag.Title</li>
+    </ul>
+}
+@section css {
+    <link rel="stylesheet" href="~/Scripts/fancyBox/source/jquery.fancybox.css"><!--fancybox燈箱-->
+}
+@section Scripts {
+  <!--fancybox燈箱-->
+  <script type="text/javascript" src="~/Scripts/fancyBox/source/jquery.fancybox.js"></script>
+  <script type="text/javascript" src="~/Scripts/fancyBox/set.js"></script>
+  <script>
+    //fancybox + 圖說
+    $(function() {
+    $(".fancybox").fancybox({
+      padding: 10,
+      beforeLoad: function() {
+        var el, id = $(this.element).data("title-id");
+        if (id) {
+          el = $("#" + id);
+          if (el.length) {
+            this.title = el.html();
+          }
+        } 
+      },
+      helpers : {
+        title: {type: "float"}
+      }
+    });
+  });
+  </script>
+}
+
+<h2>@ViewBag.Category<span>PRODUCTS</span></h2>
+
+<h3>@ViewBag.Title</h3>
+
+<ol class="pic-list">
+  <li>
+      <a href="~/Content/images/Products/p5/pic1_b.jpg" class="fancybox" data-title-id="pic1" rel="gallery"><img src="~/Content/images/Products/p5/pic1.jpg" alt=""></a>
+      <em id="pic1">SA級試驗</em>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p5/pic2_b.jpg" class="fancybox" data-title-id="pic2" rel="gallery"><img src="~/Content/images/Products/p5/pic2.jpg" alt=""></a>
+      <em id="pic2">T頭錨錠拉力試體斷面</em>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p5/pic3_b.jpg" class="fancybox" data-title-id="pic3" rel="gallery"><img src="~/Content/images/Products/p5/pic3.jpg" alt=""></a>
+      <em id="pic3">拉力試體斷面</em>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p5/pic4_b.jpg" class="fancybox" data-title-id="pic4" rel="gallery"><img src="~/Content/images/Products/p5/pic4.jpg" alt=""></a>
+      <em id="pic4">拉力試體斷面</em>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p5/pic5_b.jpg" class="fancybox" data-title-id="pic5" rel="gallery"><img src="~/Content/images/Products/p5/pic5.jpg" alt=""></a>
+      <em id="pic5">電銲型續接器拉力試體斷面</em>
+  </li>
+</ol>
+
+<h3>高塑性報告</h3>
+
+<ol class="pic-list">
+  <li>
+      <a href="~/Content/images/Products/p5/doc1_b.jpg" class="fancybox" rel="gallery2"><img src="~/Content/images/Products/p5/doc1.jpg" alt=""></a>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p5/doc2_b.jpg" class="fancybox" rel="gallery2"><img src="~/Content/images/Products/p5/doc2.jpg" alt=""></a>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p5/doc3_b.jpg" class="fancybox" rel="gallery2"><img src="~/Content/images/Products/p5/doc3.jpg" alt=""></a>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p5/doc4_b.jpg" class="fancybox" rel="gallery2"><img src="~/Content/images/Products/p5/doc4.jpg" alt=""></a>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p5/doc5_b.jpg" class="fancybox" rel="gallery2"><img src="~/Content/images/Products/p5/doc5.jpg" alt=""></a>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p5/doc6_b.jpg" class="fancybox" rel="gallery2"><img src="~/Content/images/Products/p5/doc6.jpg" alt=""></a>
+  </li>
+  <li>
+      <a href="~/Content/images/Products/p5/doc7_b.jpg" class="fancybox" rel="gallery2"><img src="~/Content/images/Products/p5/doc7.jpg" alt=""></a>
+  </li>
+</ol>

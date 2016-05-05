@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IdentityDB-Web.config Connection String" description="IdentityDB 應用程式在 web.config 中用來存取資料庫的連接字串。" defaultValue="data source=192.168.0.241;initial catalog=C36A0_JCIYP;user id=sa;password=jcin@4257386~;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\VS2\\C371420_Rebar\\Work\.WebProj\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='IdentityDB']/@connectionString" />
+  </parameter>
+  <parameter name="ProcCore.Business.DB0.C36A0_JCIYPEntities-Web.config Connection String" description="ProcCore.Business.DB0.C36A0_JCIYPEntities 應用程式在 web.config 中用來存取資料庫的連接字串。" defaultValue="ProcCore.Business.DB0.C36A0_JCIYPEntities_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\VS2\\C371420_Rebar\\Work\.WebProj\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ProcCore.Business.DB0.C36A0_JCIYPEntities']/@connectionString" />
+  </parameter>
+</parameters>

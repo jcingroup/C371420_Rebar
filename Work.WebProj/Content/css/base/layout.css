@@ -1,0 +1,156 @@
+﻿@charset "utf-8";
+
+/*      layout
+-----------------------------------------------------------------------*/
+#container {
+    width:980px;
+    height:100%;
+    margin:auto; *margin:0;
+}
+body > #container {
+    height:auto;
+    min-height: 100%;
+}
+.wrap {
+    width: 980px;
+}
+.wrap, #header, #main, #footer {
+    position:relative;
+    margin: auto;
+}
+#header {
+    margin-bottom:26px;
+}
+#main {
+    padding-bottom:197px;
+    text-align: left;
+    overflow: hidden;
+}
+#footer {
+    width:100%;
+    min-width:980px;
+    height:112px;
+    margin-top:-112px;
+    padding-top:26px;
+    background: url('../../images/footerBg.gif') repeat-x 0 0;
+    clear:both;
+}
+
+
+/*      header
+-----------------------------------------------------------------------*/
+#header h1 {
+    width:332px;
+    height:120px;
+    float:left;
+}
+#header h1 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+    background: url('../../images/logo.gif') no-repeat;
+}
+.menu {
+    width:648px;
+    height:121px;
+    float:right;
+    margin-bottom:40px;
+}
+.menu li {
+    width:108px;
+    height:100%;
+    float:left;
+}
+.menu li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding:69px 23px 23px 27px;
+    text-align: left;
+    font-size: 0.933em;
+    color:#525252;
+    border-bottom:1px solid transparent;
+    transition: background 0.35s, border 0.35s;
+}
+.menu li a span {
+    margin-left:2px;
+    font-size: 0.571em;
+    color:#aaa;
+    letter-spacing: 0.1em;
+    /*解除chrome最小字體限制*/
+    display:inline-block;
+    width:85px;
+    -webkit-transform:scale(0.7);
+    -webkit-transform-origin-x: 0;
+}
+.menu li a:hover, .AboutUs .menu li a.nav1,
+.Service .menu li a.nav2, .Products .menu li a.nav3,
+.Factory .menu li a.nav4, .Works .menu li a.nav5,
+.ContactUs .menu li a.nav6 {
+    background: #fff;
+    border-color:#589397;
+}
+
+#banner {
+    clear:both;
+    height:223px;
+    margin:0; border:0; border-radius: 0; /* 覆寫flexslider預設樣式 */
+    border-bottom: 3px solid #fff;
+}
+#banner .flex-direction-nav a:before {display: none;}
+#banner .flex-direction-nav a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-align: left;
+    text-indent: -9999px;
+    background: url('../../images/prev.png') no-repeat center center;
+}
+#banner .flex-direction-nav .flex-prev {left:-50px;}
+#banner:hover .flex-direction-nav .flex-prev {left:-20px; opacity: 1;}
+#banner .flex-direction-nav .flex-next{right:-50px; background-image: url('../../images/next.png');}
+#banner:hover .flex-direction-nav .flex-next {right:-20px; opacity: 1;}
+
+
+
+/*      footer
+-----------------------------------------------------------------------*/
+#footer p {
+    letter-spacing: 0.043em;
+    font-size: 0.571em;
+    color:#949494;
+}
+#footer .copyright {
+    margin-bottom:15px;
+    letter-spacing: 0.065em;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 0.714em;
+    color:#676b6b;
+}
+.goTop {
+    display: block;
+    width: 44px;
+    height:44px;
+    padding-left:12px;
+    position: fixed;
+    right:45px;
+    bottom:130px;
+    line-height: 44px;
+    letter-spacing: 0.043em;
+    font-size: 0.714em;
+    color:#000;
+    background: url('../../images/arrow3.gif') no-repeat 5px center;
+    border-radius: 22px;
+    transition:background 0.35s;
+    display: none;
+}
+@media (max-width: 1199px) {
+    .goTop{
+        position: absolute;
+    }
+}
+.goTop:hover, .goTop:active {
+    background-color:#fff;
+}

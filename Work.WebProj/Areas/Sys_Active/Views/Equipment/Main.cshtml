@@ -1,0 +1,153 @@
+﻿@model ProcCore.Business.DB0.c_Equipment
+
+@{
+    ViewBag.Caption = MvcSiteMapProvider.SiteMaps.Current.CurrentNode.Title;
+    ViewBag.MenuName = MvcSiteMapProvider.SiteMaps.Current.CurrentNode.ParentNode.Title;
+
+    string popWindowTitle = "用戶機台資料 維護作業 【編輯】";
+    string popWindowID = "Edit";
+    string popWindowSize = "modal-lg";
+}
+@section IncludeCSS{
+}
+@section IncludeScript{
+
+    @Html.Partial("Manage/jsCommVar")
+    <script>
+        var Info_Insert_Success = '@Resources.Res.Info_Insert_Success';
+        var Info_Update_Success = '@Resources.Res.Info_Update_Success';
+    </script>
+    @Scripts.Render("~/equipmentController")
+
+}
+
+@section sidebar{
+    @Html.Partial("Manage/vucMenu")
+}
+
+<h3 class="title">
+    <span>@ViewBag.Caption</span>
+</h3>
+
+<form ng-submit="Init_Query()">
+    <div class="table-responsive">
+
+        <div class="table-header">
+            <div class="table-filter">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label>USERID</label>
+                        <select class="form-control" ng-model="sd.user_id" ng-options="m.USERID as m.USERID + m.USERNAME for m in option_apply_user"></select>
+                    </div>
+                    <button class="btn-primary" type="submit"><i class="fa-search"></i> 搜尋</button>
+                </div>
+            </div>
+        </div><!-- table-header -->
+
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-xs-1 text-center">檢視</th>
+                    <th class="col-xs-4">機台編號</th>
+                    <th class="col-xs-1">機台型式</th>
+                    <th class="col-xs-1 text-center">既設_新設</th>
+                    <th class="col-xs-2">額定總燃燒量</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="gd in Grid_Items track by gd.equipment_id">
+                    <td class="text-center">
+                        <button class="btn-link btn-lg"
+                                data-toggle="modal" data-target="#@popWindowID"
+                                ng-click="Master_Open_Modify($index)"
+                                title="@Resources.Res.Button_Sure_Modify">
+                            <i class="fa-search-plus"></i>
+                        </button>
+                    </td>
+                    <td>
+                        {{@Html.gd(x => x.m.equipment_sn)}}
+                    </td>
+                    <td>
+                        {{@Html.gd(x => x.m.category) | category:InitData.options_equipment_category}}
+                    </td>
+                    <td class="text-center">
+                        <span class="label label-success" ng-if="gd.is_new_equip==true">
+                            新設
+                        </span>
+                        <span class="label label-primary" ng-if="gd.is_new_equip==false">
+                            既設
+                        </span>
+                    </td>
+                    <td>{{@Html.gd(x => x.m.setup_amount)}}</td>
+                </tr>
+                @* highlight被勾選到的那一列
+                    <tr class="tr-focus">...</tr>
+                *@
+            </tbody>
+        </table><!-- table本體 -->
+
+        <div class="table-footer">
+            @Html.Partial("Manage/GridPager",
+                new DotWeb.Helpers.IncludePagerParm() { edit_form_id = popWindowID, show_add = false, show_del = false })
+        </div><!-- table-footer -->
+
+    </div><!-- table外殼 -->
+</form>
+
+@using (Html.popWindow("show_master_edit", "Master_Edit_Close()", popWindowTitle, popWindowID, popWindowSize))
+{
+    <form class="form-horizontal" ng-submit="Master_Submit()">
+
+        <div class="modal-body">
+
+            @Html.Lang("BaseData")
+
+            <div class="form-group">
+                <label class="col-xs-2 control-label col-xs-offset-1">機台編號</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" ng-model="@Html.fd(x => x.m.equipment_sn)"
+                           maxlength="16"
+                           required />
+                </div>
+                <label class="col-xs-2 control-label">設備類別</label>
+                <div class="col-xs-3">
+                    <select class="form-control"
+                            ng-model="@Html.fd(x => x.m.category)"
+                            ng-options="m.equipment_category_id as m.category_name for m in InitData.options_equipment_category"
+                            required></select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-2 control-label col-xs-offset-1">新設 / 既設</label>
+
+                <div class="btn-group col-xs-3">
+                    <label class="btn btn-primary"
+                           ng-model="@Html.fd(x => x.m.is_new_equip)"
+                           btn-radio="true">
+                        新設
+                    </label>
+                    <label class="btn btn-primary"
+                           ng-model="@Html.fd(x => x.m.is_new_equip)"
+                           btn-radio="false">
+                        既設
+                    </label>
+                </div><!-- radio button //-->
+
+            </div>
+
+            <div class="form-group">
+                <label class="col-xs-3 control-label">額定總燃燒量</label>
+                <div class="col-xs-3">
+                    <input class="form-control" type="number" step="0.01" ng-model="@Html.fd(x => x.m.setup_amount)" />
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="submit" class="btn-primary"><i class="fa-check"></i> @Resources.Res.Button_Save</button>
+            <button type="button" data-dismiss="modal"><i class="fa-times"></i> @Resources.Res.Button_Close</button>
+        </div>
+
+    </form>
+}

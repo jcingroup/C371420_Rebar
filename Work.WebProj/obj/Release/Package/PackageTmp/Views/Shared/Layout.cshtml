@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- saved from url=(0014)about:internet -->
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="keywords" content="@Resources.ResWeb.keywords" />
+   <meta name="description" content="@Resources.ResWeb.description" />
+   <title>@Resources.ResWeb.WebTitle:@ViewBag.Category:@ViewBag.Title:鋼筋續接器:擴頭整圓滾牙螺紋鋼筋續接工法</title>
+   @if (ViewBag.IsFirstPage)
+        { <link href="~/Content/css/index.css" rel="stylesheet" type="text/css"> }
+    else
+        { <link href="~/Content/css/page.css" rel="stylesheet" type="text/css"> }
+    <link href="~/Scripts/flexslider/flexslider.css" rel="stylesheet" type="text/css">
+    @RenderSection("css", required: false)
+    <script src="~/Scripts/BrowerInfo.js"></script>
+</head>    
+
+<body class="@ViewBag.BodyClass">
+
+    <div id="container">
+
+        <div id="header">
+
+            <h1><a href="~/Index" title="回首頁">@Resources.ResWeb.WebTitle</a></h1>
+
+            <nav class="menu">
+                <ul>
+                    <li><a class="nav1" href="~/AboutUs">公司簡介<span>ABOUT US</span></a></li>
+                    <li><a class="nav2" href="~/Service">服務項目<span>SERVICE</span></a></li>
+                    <li><a class="nav3" href="~/Products">產品介紹<span>PRODUCTS</span></a></li>
+                    <li><a class="nav4" href="~/Factory">廠房介紹<span>FACTORY</span></a></li>
+                    <li><a class="nav5" href="~/Works">工程實績<span>OUR WORKS</span></a></li>
+                    <li><a class="nav6" href="~/ContactUs">聯絡我們<span>CONTACT US</span></a></li>
+                </ul>
+            </nav>
+
+            <div id="banner" class="flexslider">
+                <ul class="slides">
+                    @if (ViewBag.IsFirstPage) {
+                        <li><img src="~/Content/images/Index/banner4.jpg" alt=""></li>
+                        <li><img src="~/Content/images/Index/banner1.jpg" alt=""></li>
+                        <li><img src="~/Content/images/Index/banner2.jpg" alt=""></li>
+                        <li><img src="~/Content/images/Index/banner3.jpg" alt=""></li>
+                    }
+                    else {
+                        <li><img src="~/Content/images/banner1.jpg" alt=""></li>
+                        <li><img src="~/Content/images/banner2.jpg" alt=""></li>
+                        <li><img src="~/Content/images/banner3.jpg" alt=""></li>
+                    }
+                </ul>
+            </div>
+
+        </div><!-- header //-->
+
+        <div id="main">
+
+            @RenderSection("breadcrumb", required: false)
+
+            <section id="content" role="main">
+                @RenderBody()
+            </section><!-- content //-->
+
+            @if (ViewBag.IsFirstPage) { }
+            else {
+                <aside id="sidebar" role="complementary">
+                    <h2>MENU</h2>
+                    <ul>
+                        <li><a class="nav1" href="~/Products">產品加工法</a></li>
+                        <li><a class="nav2" href="~/Products/p2">加工流程</a></li>
+                        <li><a class="nav3" href="~/Products/p3">產品種類</a></li>
+                        <li><a class="nav4" href="~/Products/p4">工地現場組接工法</a></li>
+                        <li><a class="nav5" href="~/Products/p5">SA級試驗報告</a></li>
+                    </ul>
+                </aside><!-- sidebar //-->
+            }
+
+        </div><!-- main //-->
+
+    </div><!-- container //-->
+
+    <div id="footer">
+        <p class="copyright">YU-CHAN INTERNATIONAL &AMP; YUAN-JUNG ENTERPRISE CO., LTD. &COPY; SINCE 1992</p>
+        <p>BEST VIEWED IN GOOGLE CHROME, FIREFOX, SAFARI AND IE10+</p>
+        <a href="#header" class="goTop">TOP</a>
+    </div><!-- footer //-->
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- 換圖banner -->
+    <script src="~/Scripts/flexslider/jquery.flexslider-min.js"></script>
+    <!-- 讓ie9以下讀懂html5 + css3 -->
+    <!--[if lt IE 9]><script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script><![endif]-->
+    <script>
+        $(document).ready(function(){
+
+            //banner
+            $('.flexslider').flexslider({
+                controlNav:false
+            });
+
+            //滑動 goTop
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.goTop').fadeIn();
+                } else {
+                    $('.goTop').fadeOut();
+                }
+            });
+            $('a.goTop').click(function () {
+                $('html, body').animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 1000);
+                return false;
+            });
+
+            //sidebar 隨視窗捲動 (+class)
+            var length = $('#content').height() - $('#sidebar').height() + $('#content').offset().top;
+            $(window).scroll(function () {
+                 var scroll = $(this).scrollTop();
+                 var height = $('#sidebar').height() + 'px';
+                 if (scroll < $('#content').offset().top) {
+                      //還沒捲到sidebar
+                      $('#sidebar').removeClass( "fixed" );
+                 } else if (scroll > length) {
+                      //捲到網頁最底端
+                 } else {
+                      //捲到sidebar
+                      $('#sidebar').addClass( "fixed" );
+                 }
+            });
+
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

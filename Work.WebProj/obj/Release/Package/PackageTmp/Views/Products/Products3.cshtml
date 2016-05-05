@@ -1,0 +1,495 @@
+﻿@{
+  ViewBag.BodyClass = "Products p3";
+  ViewBag.Category = "產品介紹";
+  ViewBag.Title = "產品種類";
+  Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section breadcrumb {
+    <ul class="breadcrumb">
+        <li class="s"><a href="~/Index">HOME</a></li>
+        <li><a href="~/Products">@ViewBag.Category</a></li>
+        <li>@ViewBag.Title</li>
+    </ul>
+}
+@section css {
+    <link rel="stylesheet" href="~/Scripts/fancyBox/source/jquery.fancybox.css"><!--fancybox燈箱-->
+}
+@section Scripts {
+  <!--fancybox燈箱-->
+  <script type="text/javascript" src="~/Scripts/fancyBox/source/jquery.fancybox.js"></script>
+  <script type="text/javascript" src="~/Scripts/fancyBox/set.js"></script>
+  <script>
+  // 頁籤切換
+    $(function(){
+        // 預設顯示第一個 Tab
+        var _showTab = 0;
+        var $defaultLi = $('.tab li').eq(_showTab).addClass('current');
+        $($defaultLi.attr('rel')).siblings().hide();
+
+        // 當 li 頁籤被點擊時...
+        // 若要改成滑鼠移到 li 頁籤就切換時, 把 click 改成 mouseover
+        $('.tab li').mouseover(function() {
+            // 找出 li 中的超連結 href(#id)
+            var $this = $(this),
+                _clickTab = $this.attr('rel');
+            // 把目前點擊到的 li 頁籤加上 .current
+            // 並把兄弟元素都移除 .current
+            $this.addClass('current').siblings().removeClass('current');
+            // 淡入相對應的內容並隱藏兄弟元素
+            $(_clickTab).stop(false, true).fadeIn().siblings().hide();
+
+            return false;
+        }).find('a').focus(function(){
+            this.blur();
+        });
+    });
+  </script>
+}
+
+<h2>@ViewBag.Category<span>PRODUCTS</span></h2>
+
+<h3 class="hide">@ViewBag.Title</h3>
+
+<ul class="tab">
+  <li class="current" rel="#tab1">柱-同徑鋼筋續接器</li>
+  <li rel="#tab2">SRC樑-電焊型鋼筋續接器</li>
+  <li rel="#tab3">柱-同徑萬向鋼筋續接器</li>
+  <li rel="#tab4">柱-錨錠型鋼筋續接器</li>
+</ul>
+
+<div class="tab-content">
+
+  <div id="tab1">
+    <dl class="pro-info">
+      <dt>
+        <a href="~/Content/images/Products/p3/pro1_b.jpg" class="fancybox">
+          <img src="~/Content/images/Products/p3/pro1.jpg" alt="" class="border">
+        </a>
+      </dt>
+      <dd>
+        <h4>柱-同徑鋼筋續接器</h4>
+        <ul>
+          <li>適用範圍：柱，牆，樑，版與二次施工預埋鋼筋</li>
+          <li>材　　質：AISI 1045，JIS G 4051 S45C-S55C</li>
+        </ul>
+      </dd>
+    </dl>
+    <table>
+      <tr>
+        <th>規格</th>
+        <th>A/mm</th>
+        <th>B/mm</th>
+        <th>C/mm</th>
+        <th>牙距P/mm</th>
+        <th>牙數</th>
+        <th>備註</th>
+      </tr>
+      <tr>
+        <td>#11</td>
+        <td>78</td>
+        <td>40</td>
+        <td>46</td>
+        <td>3.0</td>
+        <td>13±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#10</td>
+        <td>72</td>
+        <td>36</td>
+        <td>42</td>
+        <td>3.0</td>
+        <td>12±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#9</td>
+        <td>66</td>
+        <td>33</td>
+        <td>38</td>
+        <td>3.0</td>
+        <td>11±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#8</td>
+        <td>60</td>
+        <td>30</td>
+        <td>34</td>
+        <td>3.0</td>
+        <td>10±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#7</td>
+        <td>54</td>
+        <td>27</td>
+        <td>30</td>
+        <td>3.0</td>
+        <td>9±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#6</td>
+        <td>48</td>
+        <td>24</td>
+        <td>27</td>
+        <td>3.0</td>
+        <td>8±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#5</td>
+        <td>40</td>
+        <td>20</td>
+        <td>25</td>
+        <td>2.5</td>
+        <td>8±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#4</td>
+        <td>38</td>
+        <td>19</td>
+        <td>20</td>
+        <td>2.0</td>
+        <td>9±1</td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="tab2">
+    <dl class="pro-info">
+      <dt>
+        <a href="~/Content/images/Products/p3/pro2_b.jpg" class="fancybox">
+          <img src="~/Content/images/Products/p3/pro2.jpg" alt="" class="border">
+        </a>
+      </dt>
+      <dd>
+        <h4>SRC樑-電焊型鋼筋續接器</h4>
+        <ul>
+          <li>適用範圍：SRC樑筋電焊續接工程</li>
+          <li>材　　質：AISI 1030(1035),<br> JIS G 4051 S30C (S35C)</li>
+        </ul>
+        <table>
+          <tr>
+            <th>鋼筋規格 (mm)</th>
+            <th>W (mm)</th>
+            <th>S (mm)</th>
+          </tr>
+          <tr>
+            <td>#11</td>
+            <td>10</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>#10</td>
+            <td>10</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>#08</td>
+            <td>10</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>#07</td>
+            <td>10</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>#06</td>
+            <td>9</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>#05</td>
+            <td>8</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>#04</td>
+            <td>8</td>
+            <td>8</td>
+          </tr>
+        </table>
+      </dd>
+    </dl>
+    <table>
+      <tr>
+        <th>號數</th>
+        <th>A/mm</th>
+        <th>B/mm</th>
+        <th>C/mm</th>
+        <th>牙距/mm</th>
+        <th>牙數</th>
+        <th>公差/牙</th>
+        <th>備註</th>
+      </tr>
+      <tr>
+        <td>#11</td>
+        <td>60</td>
+        <td>40</td>
+        <td>55</td>
+        <td>3.0</td>
+        <td>13</td>
+        <td>±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#10</td>
+        <td>56</td>
+        <td>36</td>
+        <td>50</td>
+        <td>3.0</td>
+        <td>12</td>
+        <td>±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#08</td>
+        <td>50</td>
+        <td>30</td>
+        <td>38</td>
+        <td>3.0</td>
+        <td>10</td>
+        <td>±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#07</td>
+        <td>46</td>
+        <td>27</td>
+        <td>36</td>
+        <td>3.0</td>
+        <td>9</td>
+        <td>±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#06</td>
+        <td>45</td>
+        <td>27</td>
+        <td>32</td>
+        <td>3.0</td>
+        <td>8</td>
+        <td>±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#05</td>
+        <td>35</td>
+        <td>20</td>
+        <td>28</td>
+        <td>2.5</td>
+        <td>8</td>
+        <td>±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#04</td>
+        <td>35</td>
+        <td>19</td>
+        <td>25</td>
+        <td>2.0</td>
+        <td>9</td>
+        <td>±1</td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="tab3">
+    <dl class="pro-info">
+      <dt>
+        <a href="~/Content/images/Products/p3/pro3_b.jpg" class="fancybox">
+          <img src="~/Content/images/Products/p3/pro3.jpg" alt="" class="border">
+        </a>
+      </dt>
+      <dd>
+        <h4>柱-同徑萬向鋼筋續接器</h4>
+        <ul>
+          <li>適用範圍：柱，牆，樑，版收頭施工鋼筋</li>
+          <li>材　　質：AISI 1045，JIS G 4051 S45C-S55C</li>
+        </ul>
+      </dd>
+    </dl>
+    <table>
+      <tr>
+        <th>規格</th>
+        <th>A/mm</th>
+        <th>B/mm</th>
+        <th>C/mm</th>
+        <th>牙距P/mm</th>
+        <th>牙數</th>
+        <th>備註</th>
+      </tr>
+      <tr>
+        <td>#11</td>
+        <td>78</td>
+        <td>40</td>
+        <td>46</td>
+        <td>3.0</td>
+        <td>13±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#10</td>
+        <td>72</td>
+        <td>36</td>
+        <td>42</td>
+        <td>3.0</td>
+        <td>12±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#9</td>
+        <td>66</td>
+        <td>33</td>
+        <td>38</td>
+        <td>3.0</td>
+        <td>11±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#8</td>
+        <td>60</td>
+        <td>30</td>
+        <td>34</td>
+        <td>3.0</td>
+        <td>10±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#7</td>
+        <td>60</td>
+        <td>27</td>
+        <td>32</td>
+        <td>3.0</td>
+        <td>10±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#6</td>
+        <td>48</td>
+        <td>24</td>
+        <td>30</td>
+        <td>3.0</td>
+        <td>8±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#5</td>
+        <td>40</td>
+        <td>24</td>
+        <td>25</td>
+        <td>2.5</td>
+        <td>8±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#4</td>
+        <td>38</td>
+        <td>19</td>
+        <td>20</td>
+        <td>2.0</td>
+        <td>9±1</td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="tab4">
+    <dl class="pro-info">
+      <dt>
+        <a href="~/Content/images/Products/p3/pro4_b.jpg" class="fancybox">
+          <img src="~/Content/images/Products/p3/pro4.jpg" alt="" class="border">
+        </a>
+      </dt>
+      <dd>
+        <h4>柱-錨錠型鋼筋續接器</h4>
+        <ul>
+          <li>適用範圍：柱頂收頭，樑筋彎勾錨錠施工續接鋼筋</li>
+          <li>材　　質：AISI 1045，JIS G 4051 S45C</li>
+        </ul>
+      </dd>
+    </dl>
+    <table>
+      <tr>
+        <th>規格</th>
+        <th>A/mm</th>
+        <th>B/mm</th>
+        <th>牙距P/mm</th>
+        <th>牙數</th>
+        <th>備註</th>
+      </tr>
+      <tr>
+        <td>#11</td>
+        <td>72</td>
+        <td>36</td>
+        <td>3.0</td>
+        <td>12±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#10</td>
+        <td>65</td>
+        <td>32</td>
+        <td>3.0</td>
+        <td>11±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#9</td>
+        <td>60</td>
+        <td>30</td>
+        <td>3.0</td>
+        <td>10±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#8</td>
+        <td>50</td>
+        <td>25</td>
+        <td>3.0</td>
+        <td>8±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#7</td>
+        <td>45</td>
+        <td>25</td>
+        <td>3.0</td>
+        <td>8±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#6</td>
+        <td>38</td>
+        <td>20</td>
+        <td>3.0</td>
+        <td>7±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#5</td>
+        <td>30</td>
+        <td>17</td>
+        <td>2.5</td>
+        <td>7±1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>#4</td>
+        <td>25</td>
+        <td>16</td>
+        <td>2.0</td>
+        <td>8±1</td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+</div>

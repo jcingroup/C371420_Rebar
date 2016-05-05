@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+  <mvcSiteMapNode title="功能選單" clickable="false" >
+
+    <mvcSiteMapNode title="用戶端 資料申報"   clickable="false" area="Sys_Active" IconClass="fa-list-alt" key="25" roles="Admins,Users">
+      <mvcSiteMapNode title="設備資料 維護作業" controller="Equipment" action="Users" description="用戶機台資料 維護作業"/>
+      <mvcSiteMapNode title="申報資料 維護作業" controller="Apply" action="Users" description="用戶申報資料 維護作業"/>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="用戶端 資料申報(Excel匯入)" clickable="false" area="Sys_Active" IconClass="fa-list-alt" key="28" roles="Admins,Users">
+      <mvcSiteMapNode title="設備資料 Excel匯入作業" controller="ExcelHandle" action="Equipment" description="設備基本資料 Excel匯入作業"/>
+      <mvcSiteMapNode title="申報資料 Excel匯入作業" controller="ExcelHandle" action="Apply" description="申報資料 Excel匯入作業"/>
+      <mvcSiteMapNode title="每月申報 Excel匯入作業" controller="ExcelHandle" action="Month" description="每月申報"/>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="用戶端 報表列印" clickable="false" area="Sys_Active" IconClass="fa-list-alt" key="30" roles="Admins,Users">
+      <mvcSiteMapNode title="01年度申報表" controller="ClientReport" action="YearApply" description="01年度申報表"/>
+      <mvcSiteMapNode title="02月平均值監測數值趨勢圖" controller="ClientReport" action="MonthAverage" description="02月平均值監測數值趨勢圖"/>
+      <mvcSiteMapNode title="03年平均值監測數值趨勢圖" controller="ClientReport" action="YearAverage" description="03年平均值監測數值趨勢圖"/>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="管理端 設定作業"   clickable="false" area="Sys_Active" IconClass="fa-list-alt" key="10" roles="Admins,Managers">
+      <mvcSiteMapNode title="廠商帳號對應 維護作業" controller="Apply_User" action="Main" description="廠商帳號對應 維護作業"/>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="管理端 申報維護"   clickable="false" area="Sys_Active" IconClass="fa-list-alt" key="20" roles="Admins,Managers">
+      <mvcSiteMapNode title="用戶設備資料 維護作業" controller="Equipment" action="Main" description="用戶設備資料 維護作業"/>
+      <mvcSiteMapNode title="用戶申報資料 維護作業" controller="Apply" action="Main" description="用戶申報資料 維護作業"/>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="管理端 報表列印" clickable="false" area="Sys_Active" IconClass="fa-list-alt" key="35" roles="Admins,Managers">
+      <mvcSiteMapNode title="01年度申報表" controller="ManagerReport" action="YearApply" description="01年度申報表"/>
+      <mvcSiteMapNode title="02月平均值監測數值趨勢圖" controller="ManagerReport" action="MonthAverage" description="02月平均值監測數值趨勢圖"/>
+      <mvcSiteMapNode title="03年平均值監測數值趨勢圖" controller="ManagerReport" action="YearAverage" description="03年平均值監測數值趨勢圖"/>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="操作管理"   clickable="false" area="Sys_Active" IconClass="fa-list-alt" key="40">
+      <mvcSiteMapNode title="操作手冊下載" controller="Func9" action="Main" description="操作手冊下載"/>
+      <mvcSiteMapNode title="下載每月上傳範例" controller="Func10" action="Main" description="下載每月上傳範例"/>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="系統資料設定" clickable="false" area="Sys_Base" IconClass="fa-cogs" key="90" roles="Admins,Managers">
+      <mvcSiteMapNode title="使用者管理" controller="Users" action="Main" roles="Admins"/>
+      <mvcSiteMapNode title="角色管理" controller="Roles" action="Main" roles="Admins"/>
+      <mvcSiteMapNode title="變更密碼" controller="Users" action="ChangePassword" />
+    </mvcSiteMapNode>
+  </mvcSiteMapNode>
+</mvcSiteMap>

@@ -1,0 +1,381 @@
+﻿@import "base/basic.css";
+@import "base/layout.css";
+@charset "utf-8";
+
+/*      layout
+-----------------------------------------------------------------------*/
+
+#main {padding-top:18px;}
+/* 麵包屑 */
+.breadcrumb {
+    text-align:right;
+    font-size: 0.786em;
+    color:#81B68C;
+}
+.breadcrumb li {
+    display: inline;
+}
+.breadcrumb a {
+    position: relative;
+    padding-right:9px;
+    color:#aaa;
+}
+.breadcrumb a:hover {
+    color:#888;
+}
+.breadcrumb a:after {
+    content:"/";
+    display: block;
+    position: absolute;
+    top:2px; right:0;
+    color:#ccc;
+}
+.breadcrumb .s {
+    letter-spacing: 0.043em;
+}
+
+/*-- content --*/
+#content {
+    width:710px;
+    float:right;
+    margin-top:-18px;
+}
+
+/*-- sidebar --*/
+#sidebar {
+    width:220px;
+    float:left;
+    margin-top:-18px;
+}
+#sidebar.fixed {
+    position: fixed;
+    top:0;
+    margin-top:0;
+}
+@media (max-width: 1199px) {
+    #sidebar.fixed{
+        position: static;
+        margin-top:-18px;
+    }
+}
+#sidebar h2 {
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.429em;
+    color: #a7adad;
+}
+#sidebar li {
+    margin-bottom:15px;
+    padding-bottom:15px;
+    border-bottom:1px solid #d1d1d1;
+}
+#sidebar li:last-child {border:none;}
+#sidebar li a {
+    display: block;
+    padding-left:23px;
+    color:#589397;
+    background: url('../images/arrow4.gif') no-repeat 5px center;
+}
+#sidebar li a:hover, .p1 #sidebar li a.nav1,
+.p2 #sidebar li a.nav2, .p3 #sidebar li a.nav3,
+.p4 #sidebar li a.nav4, .p5 #sidebar li a.nav5 {color:#000;}
+
+
+
+/*      page
+-----------------------------------------------------------------------*/
+
+/*-- 文字列表 --*/
+.text-list li { }
+.text-list.dec { list-style: decimal; }
+
+/*-- 圖說 --*/
+figure.float-l {
+    margin:6px;
+}
+figure.float-l img {
+    border:1px solid #fff;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    transition:opacity 0.35s;
+}
+figure.float-l a:hover img {opacity: 0.6;}
+figure.float-l figcaption {
+    margin-top:3px;
+    font-size: 0.929em;
+    line-height: 145%;
+    color: #787d7d;
+}
+
+/*-- 圖片列表 --*/
+.pic-list {
+    margin-bottom:20px;
+    overflow: hidden;
+}
+.pic-list li {
+    float:left;
+    margin:6px;
+}
+.pic-list li img {
+    border:1px solid #fff;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    transition:opacity 0.35s;
+}
+.pic-list li a:hover img {opacity: 0.6;}
+.pic-list li em {
+    display: block;
+    margin-top:3px;
+    font-size: 0.929em;
+    line-height: 145%;
+    color: #787d7d;
+}
+
+/*-- 頁籤切換 --*/
+.tab li {
+    float:left;
+    cursor: pointer;
+}
+
+
+/*-- About Us --*/
+figure.float-l {
+    margin:0 15px 20px 0;
+}
+.text-list.grid {
+    font-weight: bold;
+}
+.text-list.grid li {
+    height:52px;
+    text-align: center;
+    line-height: 145%;
+}
+
+
+/*-- Service --*/
+.Service .pic-list img {
+    margin-bottom:10px;
+}
+.Service .pic-list h3:after {
+    display: none;
+}
+
+
+/*-- Products --*/
+.Products.p1 figure.float-l {
+    width:375px;
+    margin-left:-13px;
+    margin-right:15px;
+    margin-bottom:50px;
+}
+.Products.p1 figure.float-l img {margin-left:13px;}
+.Products.p1 figure.float-l figcaption {
+    margin-left:13px;
+    margin-top:13px;
+}
+.flowchart {
+    position: relative;
+}
+.flowchart a {
+    display: block;
+    width: 160px;
+    height: 163px;
+    position: absolute;
+    background: url('../images/Products/p2/pic2.png') no-repeat;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.flowchart a em {display: none;}
+.flowchart a:hover {opacity: 1;}
+.flowchart a.step2 {left:152px; top:-2px;}
+.flowchart a.step3 {
+    background-position: -197px;
+    left:347px; top:-4px;
+}
+.flowchart a.step4 {
+    background-position: -395px;
+    left:541px; top:-4px;
+}
+.flowchart a.step6 {
+    background-position: -593px;
+    left:256px; top:184px;
+}
+.flowchart a.step7 {
+    height:100px;
+    background-position: -790px;
+    left:57px; top:222px;
+}
+.Products .tab {
+    height:44px;
+    margin-top:25px;
+    margin-bottom:20px;
+    padding-bottom:3px;
+    border-bottom:1px solid #ccc;
+}
+.Products .tab li {
+    position: relative;
+    height:40px;
+    margin-left:23px;
+    line-height: 40px;
+    color:#fff;
+    font-weight: bold;
+    background: #666;
+    font-size: 1.071em;
+}
+.Products .tab li:before, .Products .tab li:after {
+    display: block;
+    content:" ";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top:0;
+    border:30px solid #666;
+    border-width:40px 20px 0 0;
+    border-top-color:transparent;
+}
+.Products .tab li:before {left:-20px;}
+.Products .tab li:after {
+    right:-20px;
+    border-width:0 0 40px 20px;
+    border-bottom-color:transparent;
+    z-index: 10;
+}
+.Products .tab li:nth-child(2) {background:#777; }
+.Products .tab li:nth-child(2):before {border-right-color:#777; }
+.Products .tab li:nth-child(2):after {border-left-color:#777; }
+.Products .tab li:nth-child(3) {background:#999; }
+.Products .tab li:nth-child(3):before {border-right-color:#999; }
+.Products .tab li:nth-child(3):after {border-left-color:#999; }
+.Products .tab li:nth-child(4) {background:#bbb; }
+.Products .tab li:nth-child(4):before {border-right-color:#bbb; }
+.Products .tab li:nth-child(4):after {border-left-color:#bbb; }
+
+.Products .tab li.current {color:#397174; background: #fff;}
+.Products .tab li.current:before {border-right-color:#fff; }
+.Products .tab li.current:after {border-left-color:#fff; z-index:0;}
+
+.Products .tab li:first-child {margin-left:0; padding-left:10px;}
+.Products .tab li:first-child:before {display: none;}
+.pro-info {
+    margin-bottom:20px;
+    overflow: hidden;
+}
+.pro-info dt {
+    float:left;
+}
+.pro-info dd {
+    width: 310px;
+    float:right;
+}
+.pro-info dd h4 {
+    margin-top:5px;
+    margin-bottom:10px;
+    padding-bottom:10px; 
+    font-size: 1.143em;
+    border-bottom: 1px dotted #c7c7c7;
+}
+.pro-info dd li {
+    text-indent: -5em;
+    margin-left:5em;
+    margin-bottom:8px;
+    color:#589397;
+    line-height: 140%;
+}
+.pro-info dd th, .pro-info dd td {
+    padding:5px;
+    border-color:#CBCDCE;
+}
+.pro-info dd th {
+    background: #90ADB4;
+}
+.pro-info dd tr:nth-child(even) {
+    background: #E3E7E7;
+}
+
+
+/*-- Works --*/
+.Works .tab {
+    width:100%;
+    height:51px;
+    border-bottom: 1px solid #fff;
+}
+.Works .tab li {
+    width:170px;
+    height:50px;
+    margin-right:6px;
+    padding:10px 15px;
+    line-height: 27px;
+    font-size: 1.143em;
+    background: #d6d6d6;
+    border-left:2px solid #dedede;
+    border-right:2px solid #dedede;
+    border-top:2px solid #777;
+    cursor: pointer;
+    transition:background 0.35s, color 0.35s, border 0.35s;
+}
+.Works .tab li span {
+    display: inline-block;
+    width:30px;
+    height:30px;
+    margin-right:15px;
+    text-align: center;
+    color:#888;
+    background: #eee;
+    border:1px solid #BCBCBC;
+    border-radius: 15px;
+    transition:background 0.35s, color 0.35s, border 0.35s;
+}
+.Works .tab li.current, .Works .tab li:hover {
+    position: relative;
+    color:#000;
+    background: #fff;
+    border-top-color: #5F6B6B;
+}
+.Works .tab li.current:after, .Works .tab li:hover:after {
+    content:" ";
+    display: block;
+    width:0;
+    height:0;
+    position: absolute;
+    left:50%; bottom:-8px;
+    margin-left:-4px;
+    border:4px solid transparent;
+    border-width:8px 4px 0 4px;
+    border-top-color:#fff;
+    z-index: 10;
+}
+.Works .tab li.current span, .Works .tab li:hover span {
+    color:#fff;
+    background: #5F6B6B;
+    border-color:#484E4E;
+}
+.Works .tab-content h3 {
+    margin:0;
+    padding:12px 15px;
+    color:#fff;
+    background: #666;
+    border-left:1px solid #fff;
+    border-right:1px solid #fff;
+}
+.Works .tab-content h3:after {display: none;}
+
+
+/*--ContactUs --*/
+.ContactUs iframe {
+    width:100%;
+    height:240px;
+    margin-bottom:20px;
+    border:1px solid #fff;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+.contact-info li {
+    margin-bottom:10px;
+    padding:10px;
+    font-size: 1.071em;
+    border-bottom:1px dotted #ccc;
+}
+.contact-info li em {
+    margin-right:5px;
+    font-weight: bold;
+    color:#62896A;
+}
+.contact-info li a {color:#3b3b3b;}
+.contact-info li a:hover {color:#589397;}
